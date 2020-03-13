@@ -1,0 +1,13 @@
+a:link {
+    color:red;
+    text-decoration: none;
+    background-color: lawngreen;
+    padding: 5px 10px;
+    margin: 0;
+    text-shadow: lawngreen;
+    outline: 0px;
+}
+a:hover{
+    font-size: 45px;
+    background-color: red;
+}

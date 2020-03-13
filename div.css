@@ -1,0 +1,13 @@
+.div-black{
+    background-image: url("https://www.homelovein.com/wp-content/uploads/2019/10/1e3375fb886b5b2e10df5d12fd733fea.jpg") ;
+    width:initial;
+    color:rgb(117, 54, 54);
+    text-overflow: clip;
+    font-size: 14px;
+    margin: 0px 0px 0 px auto;
+    width: inherit;
+    border: 0px;
+} 
+pre {
+    color: lawngreen;
+}
