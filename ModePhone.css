@@ -1,0 +1,11 @@
+.ModePhone{
+    width: 100%;
+    background-color: red;
+}
+.containPhone {
+    display: flex;
+    flex-wrap: wrap;
+}
+.menuPhone {
+    list-style-type: none;
+}
