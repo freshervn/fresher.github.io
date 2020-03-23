@@ -1,0 +1,255 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Fb status</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #demo {
+            background-color: royalblue;
+            border: 0px;
+            padding: 6px 6px;
+            font-size: 24px;
+            border-radius: 5%;
+            color: white;
+            font-weight: bold;
+        }
+
+        .status {
+            position: fixed;
+            overflow: auto;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(00, 00, 00, 0.5);
+        }
+
+        form {
+            background-color: white;
+            border-radius: 3px;
+            position: relative;
+            flex-wrap: wrap;
+            top: 8%;
+            left: 25%;
+            width: 40%;
+        }
+
+        .header {
+            background-color: whitesmoke;
+            border-radius: 3px;
+            width: 100%;
+        }
+
+        .header p {
+            float: left;
+            font-size: 12px;
+            margin: 8px 8px;
+            font-weight: bold;
+            color: #3f3e3e;
+        }
+
+        .header span {
+            float: right;
+            margin: 8px 8px;
+            font-size: 16px;
+            color: #a59f9f;
+        }
+
+        .content {
+            display: flex;
+            position:
+                top 0px;
+            left: 0px;
+            width: 100%;
+        }
+
+        .content img {
+            border-radius: 50%;
+            box-sizing: content-box;
+            width: 60px;
+            margin: 8px 8px;
+            max-height: 60px;
+        }
+
+        #textarea {
+            position: relative;
+            width: 100%;
+            margin: 0px 0px 0px 0px;
+            padding: 0px 0px 0px 0px;
+        }
+
+        .content textarea {
+            font-size: 22px;
+            border: none;
+            outline: none;
+            margin: 10px 10px;
+            width: 100%;
+            resize: none;
+        }
+
+        .choice {
+            width: 100%;
+            display: flex;
+            justify-content: space-around
+        }
+
+        .choice span {
+            background-color: whitesmoke;
+            padding: 4px;
+            margin: 0px;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        .choice span:hover {
+            background-color: beige;
+        }
+
+        hr {
+            size: 1px;
+            color: royalblue;
+            width: 95%;
+        }
+
+        .submit {
+            padding: 4px;
+        }
+
+        .submit div {
+            background-color: whitesmoke;
+            margin: 4px;
+            border-radius: 3px;
+            padding: 12px;
+            font-size: 22px;
+        }
+
+        .submit i {
+            border-radius: 50%;
+            background-color: white;
+        }
+
+        select {
+            float: right;
+            font-size: 22px;
+        }
+
+        option {
+            padding: 2px;
+
+        }
+
+        .submit img {
+            border-radius: 50%;
+            box-sizing: content-box;
+            width: 40px;
+        }
+
+        .submit span {
+            align-content: center;
+        }
+
+        .submit input[type=submit] {
+            background-color: 	#3b5998;
+            width: 100%;
+            font-size: 16px;
+            border: none;
+            border-radius: 3px;
+            padding: 8px;
+        }
+        a{
+            position: relative;
+        }
+        a i{
+            position: absolute;
+            bottom: 0px;
+            right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Trạng Thái Facebook</h1>
+    <button onclick="status()" id="demo"> <i class="fa fa-facebook"></i>Demo</button>
+    <div class="status">
+        <form action="">
+            <div class="header">
+                <p>Tạo bài viết</p>
+                <span>&#x2716;</span>
+            </div>
+            <div class="content">
+                <img src="media/avatar.jpg" alt="avatar">
+                <textarea placeholder="Boss ơi, bạn đang nghĩ gì?"></textarea>
+
+            </div>
+            <hr>
+            <div class="choice">
+                <span><i class="fa fa-photo"></i> Ảnh/Video</span>
+                <span><i class="fa fa-tag"></i></i> Gắn thẻ bạn bè</span>
+                <span><i class="fa fa-smile-o"></i> cảm xúc/Ho..</span>
+                <span><i class="material-icons"> more_horiz</i></span>
+            </div>
+            <div class="submit">
+                <div>
+                    <i class="fa fa-newspaper-o"></i>
+                    <span>Bảng tin</span>
+                    <select id="">
+                        <option value="volvo"> &#xe84d; Công khai</option>
+                        <option value="saab">Bạn bè</option>
+                        <option value="opel">Bạn bè ngoại trừ</option>
+                        <option value="audi">Chỉ mình tôi</option>
+                    </select></div>
+                <div>
+                    <a href="#">
+                        <img src="media/avatar.jpg" alt="avatar">
+                        <i class="fa fa-plus-circle" style="font-size:20px;color:blue"></i>
+                    </a>
+                        
+                    <span>Tin của bạn<select id="">
+                            <option value="volvo"> &#xe84d; Công khai</option>
+                            <option value="saab">Bạn bè</option>
+                            <option value="opel">Bạn bè ngoại trừ</option>
+                            <option value="audi">Chỉ mình tôi</option>
+                        </select></span>
+                </div>
+                <input type="submit" value="Đăng">
+            </div>
+        </form>
+    </div>
+    <script>
+        function status() {
+            var status = document.getElementsByClassName("status")[0];
+            status.style.display = "block";
+        }
+
+        var comfyText = (function () {
+            var tag = document.querySelectorAll('textarea')
+            for (var i = 0; i < tag.length; i++) {
+                tag[i].addEventListener('paste', autoExpand)
+                tag[i].addEventListener('input', autoExpand)
+                tag[i].addEventListener('keyup', autoExpand)
+            }
+            function autoExpand(e, el) {
+                var el = el || e.target
+                el.style.height = 'inherit'
+                el.style.height = el.scrollHeight + 'px'
+            }
+            window.addEventListener('load', expandAll)
+            window.addEventListener('resize', expandAll)
+            function expandAll() {
+                var tag = document.querySelectorAll('textarea')
+                for (var i = 0; i < tag.length; i++) {
+                    autoExpand(e, tag[i])
+                }
+            }
+        })()
+    </script>
+</body>
+
+</html>
