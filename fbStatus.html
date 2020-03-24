@@ -23,6 +23,7 @@
 
         .status {
             position: fixed;
+            display: none;
             overflow: auto;
             top: 0;
             left: 0;
@@ -156,17 +157,19 @@
         }
 
         .submit input[type=submit] {
-            background-color: 	#3b5998;
+            background-color: #3b5998;
             width: 100%;
             font-size: 16px;
             border: none;
             border-radius: 3px;
             padding: 8px;
         }
-        a{
+
+        a {
             position: relative;
         }
-        a i{
+
+        a i {
             position: absolute;
             bottom: 0px;
             right: 10px;
@@ -176,7 +179,7 @@
 
 <body>
     <h1>Trạng Thái Facebook</h1>
-    <button onclick="status()" id="demo"> <i class="fa fa-facebook"></i>Demo</button>
+    <button onclick="status()" id="demo"> <i class="fa fa-facebook"></i> Demo</button>
     <div class="status">
         <form action="">
             <div class="header">
@@ -210,7 +213,7 @@
                         <img src="media/avatar.jpg" alt="avatar">
                         <i class="fa fa-plus-circle" style="font-size:20px;color:blue"></i>
                     </a>
-                        
+
                     <span>Tin của bạn<select id="">
                             <option value="volvo"> &#xe84d; Công khai</option>
                             <option value="saab">Bạn bè</option>
@@ -223,9 +226,16 @@
         </form>
     </div>
     <script>
+
         function status() {
             var status = document.getElementsByClassName("status")[0];
             status.style.display = "block";
+        }
+        var modal = document.getElementsByClassName("status")[0];
+        window.onclick = function (e) {
+            if (e.target == modal) {
+                modal.style.display = "none";
+            }
         }
 
         var comfyText = (function () {

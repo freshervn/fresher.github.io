@@ -1,0 +1,109 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Pinterest Display</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 40px;
+        }
+
+        a {
+            background: #cb2027;
+            border-radius: 50%;
+            color: white;
+            width: 60px;
+            height: 60px;
+            text-decoration: none;
+            padding: 10px;
+            margin: 0px;
+        }
+
+        .column {
+            flex: 20%;
+            max-width: 20%;
+            padding: 0 4px;
+        }
+
+        .column img {
+            margin-top: 8px;
+            vertical-align: middle;
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        @media screen and (max-width: 1000px) {
+            .column {
+                max-width: 25%;
+                flex: 25%;
+            }
+        }
+
+        @media screen and (max-width: 740px) {
+            .column {
+                max-width: 33%;
+                flex: 33%;
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+            .column {
+                max-width: 50%;
+                flex: 50%;
+            }
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1><a href="#" class="fa fa-pinterest"></a> Pinterest Demo by me :D</h1>
+    <div class="row">
+        <div class="column">
+            <img src="media/eren.jpg" alt="eren">
+            <img src="media/erwin.jpg" alt="erwin">
+        </div>
+        <div class="column">
+            <img src="media/historia.jpg" alt="historia">
+            <img src="media/levi.jpg" alt="levi">
+        </div>
+        <div class="column">
+            <img src="media/reiner.jpg" alt="reiner">
+            <img src="media/sasa.jpg" alt="sasa">
+        </div>
+        <div class="column">
+            <img src="media/zeke.jpg" alt="zeke">
+            <img src="media/amin.jpg" alt="amin">
+        </div>
+        <div class="column">
+            <img src="media/titanEat.jpg" alt="titan">
+            <img src="media/anie.jpg" alt="anie">
+        </div>
+    </div>
+    <div id="test" style="width: 100%; height: 50px; background-color: blue;">
+    </div>
+    <p id="demo"></p>
+    <script>
+        document.getElementById("demo").innerHTML = document.getElementById("test").scrollWidth;
+    </script>
+</body>
+
+</html>
