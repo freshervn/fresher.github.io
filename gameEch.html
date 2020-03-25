@@ -1,0 +1,112 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Con Ech</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            text-align: center;
+        }
+
+        canvas {
+            position: absolute;
+            top: 30px;
+            left: 400px;
+            border: solid 1px black;
+        }
+
+        video {
+            position: absolute;
+            overflow: auto;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(00, 0, 0, 0, 1);
+            display: none;
+        }
+
+        button {
+            position: relative;
+            top: auto;
+            background-color: beige;
+            opacity: 0.8;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 24px;
+            border: none;
+            border-radius: 10px;
+            color: blue;
+        }
+
+        button:hover {
+            color: red;
+            opacity: 1;
+        }
+
+        #controlTable {
+            position: absolute;
+            bottom: 60px;
+            right: 350px;
+        }
+
+        .move {
+            background-color: lightslategray;
+            border: none;
+            padding: 8px;
+            font-size: 18px;
+            border-radius: 10px;
+            font-weight: bold;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <video src="https://universe-meeps.leagueoflegends.com/v1/assets/videos/odyssey-hero.webm" autoplay loop muted id="background"></video>
+    <button onclick="StartGame()" id="start">start game</button>
+    <div id="controlTable">
+        <button class="move" onclick="moveleft()"><i class="fa fa-arrow-left"></i></button>
+        <button class="move" onclick="moveright()"><i class="fa fa-arrow-right"></i></button>
+    </div>
+
+    <script>
+
+        function StartGame() {
+            // tạo canvas
+            var canvas = document.createElement("canvas");
+            canvas.id="canvas";
+            canvas.width = "500";
+            canvas.height = "600";
+            document.body.appendChild(canvas);
+
+            // hiện thị video nền
+            document.getElementById("background").style.display="block";
+
+            // ẩn nút start và hiển thị nút điều khiển
+            document.getElementById("start").style.display = "none";
+            var button = document.getElementsByClassName("move");
+            for (let i = 0; i < button.length; i++) {
+                button[i].style.display = "inline-Block"
+            }
+
+        }
+
+        function moveleft(d){
+            var c=document.getElementById("canvas").getContext("2d");
+            var conEch =new Image();
+            let distance=d;
+            conEch.src='media/conEch.png';
+            c.drawImage(conEch, 200, 520,80,80);
+        }
+
+    </script>
+
+</body>
+
+</html>
