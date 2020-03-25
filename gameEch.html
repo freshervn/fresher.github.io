@@ -52,7 +52,7 @@
         #controlTable {
             position: absolute;
             bottom: 60px;
-            right: 350px;
+            right: 280px;
         }
 
         .move {
@@ -71,8 +71,9 @@
     <video src="https://universe-meeps.leagueoflegends.com/v1/assets/videos/odyssey-hero.webm" autoplay loop muted id="background"></video>
     <button onclick="StartGame()" id="start">start game</button>
     <div id="controlTable">
-        <button class="move" onclick="moveleft()"><i class="fa fa-arrow-left"></i></button>
-        <button class="move" onclick="moveright()"><i class="fa fa-arrow-right"></i></button>
+        <button class="move" onclick="moveLeft()"><i class="fa fa-arrow-left"></i></button>
+        <button class="move" onclick="moveRight()"><i class="fa fa-arrow-right"></i></button>
+        <button class="move" id="summon">Summon</button>
     </div>
 
     <script>
@@ -85,6 +86,8 @@
             canvas.height = "600";
             document.body.appendChild(canvas);
 
+            
+
             // hiện thị video nền
             document.getElementById("background").style.display="block";
 
@@ -94,16 +97,57 @@
             for (let i = 0; i < button.length; i++) {
                 button[i].style.display = "inline-Block"
             }
-
+            
+            document.getElementById("summon").addEventListener("click", summon);
+            
         }
 
-        function moveleft(d){
-            var c=document.getElementById("canvas").getContext("2d");
-            var conEch =new Image();
-            let distance=d;
+        function summon(){
+            canvas=document.getElementById("canvas");
+            context= canvas.getContext('2d');
+            conEch = new Image();
             conEch.src='media/conEch.png';
-            c.drawImage(conEch, 200, 520,80,80);
+            context.drawImage(conEch, 200, 520, 80, 80);    
         }
+
+        var echx=200;
+        var coiny=0;
+        function moveLeft(){
+            canvas=document.getElementById("canvas");
+            context= canvas.getContext('2d');
+            context.clearRect(0,0,500,600);
+            conEch = new Image();
+            echx-=15;
+            conEch.src='media/conEch.png';
+            context.drawImage(conEch, echx ,520, 80, 80); 
+            dropCoin()
+        }
+
+        function moveRight(){
+            canvas=document.getElementById("canvas");
+            context= canvas.getContext('2d');
+            context.clearRect(0,0,500,600);
+            conEch = new Image();
+            echx+=15;
+            conEch.src='media/conEch.png';
+            context.drawImage(conEch, echx ,520, 80, 80); 
+            dropCoin()     
+        }
+   
+        function dropCoin(){
+            canvas=document.getElementById("canvas");
+            context= canvas.getContext('2d');
+            coin=new Image();
+            coin.src="media/tiền.png";
+            coiny+=15;
+            context.drawImage(coin,0,coiny,80,80);
+        }
+
+        function reCoin(){
+            coiny=0;
+        }
+
+
 
     </script>
 
