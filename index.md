@@ -98,8 +98,10 @@
         </div>
         
     </div>
-  
+  <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v6.0&appId=2477828602276902&autoLogAppEvents=1"></script>
     <script src="pet.js"></script>
+    <div class="fb-comments" data-href="https://freshervn.github.io/fresher.github.io/" data-width="" data-numposts="5"></div>
     <script src="javaxcriptmenuB.js"></script>
 </body>
 
